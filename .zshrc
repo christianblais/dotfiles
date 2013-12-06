@@ -14,8 +14,9 @@ ZSH_THEME="robbyrussell"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias be='bundle exec'
+alias vi='vim'
 alias ls='ls -la'
-alias spy="cd ~/code/ruby/shopify"
+alias spy="cd ~/code/vagrant/shopify"
 alias g="git"
 alias ptest="bundle exec rake test PARALLEL=1"
 alias everqueen="RAILS_ENV=test be rails s -p 3001 --pid tmp/pids/temp"
@@ -58,8 +59,13 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/Users/christianblais/.rbenv/bin:bin:/node_modules/.bin:/Users/christianblais/.nodenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
+export PATH=$PATH:~/.rbenv/bin:bin:/node_modules/.bin:~/.nodenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
 
-eval "$(rbenv init -)"
+[[ -s "$HOME/.rbenv" ]] && eval "$(rbenv init -)"
+
+export EDITOR="vim"
+
+export GREP_OPTIONS="--color=auto"
+export GREP_COLOR="1;37;41"
 
 # source /opt/boxen/env.sh
